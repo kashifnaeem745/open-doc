@@ -92,7 +92,7 @@ export async function init(opts: InitOptions): Promise<void> {
 
   if (!existsSync(TEMPLATE_DIR)) {
     throw new Error(
-      `Template missing at ${TEMPLATE_DIR}. If you are running from source, run \`pnpm --filter @open-doc/cli build\` first.`,
+      `Template missing at ${TEMPLATE_DIR}. If you are running from source, run \`pnpm --filter @open-document/cli build\` first.`,
     );
   }
 
@@ -114,8 +114,8 @@ export async function init(opts: InitOptions): Promise<void> {
     pkg.name = name ?? basename(target);
     pkg.version = '0.0.0';
     pkg.private = true;
-    if (pkg.dependencies?.['@open-doc/core']) {
-      pkg.dependencies['@open-doc/core'] = coreVersionRange();
+    if (pkg.dependencies?.['@open-document/core']) {
+      pkg.dependencies['@open-document/core'] = coreVersionRange();
     }
     await writeFile(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`);
   }

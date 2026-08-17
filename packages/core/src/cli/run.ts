@@ -105,7 +105,7 @@ export async function run(argv: string[]): Promise<void> {
     .addOption(new Option('--host [host]', 'expose on the network (optional host)'))
     .option('--open', 'open the browser on start')
     .option('--no-skills-check', 'skip the built-in skills drift check')
-    .option('--mcp', 'serve an MCP endpoint at /mcp (requires @open-doc/mcp)')
+    .option('--mcp', 'serve an MCP endpoint at /mcp (requires @open-document/mcp)')
     .action(async (flags: DevFlags) => {
       if (flags.skillsCheck !== false) {
         await runSkillsDriftCheck(resolveBuiltinSkillsDir());
@@ -136,7 +136,7 @@ export async function run(argv: string[]): Promise<void> {
 
   program
     .command('sync:skills')
-    .description('Sync built-in skills from @open-doc/core into this workspace')
+    .description('Sync built-in skills from @open-document/core into this workspace')
     .option('--dry-run', 'show what would change without writing')
     .action(async (flags: SyncFlags) => {
       const { syncSkills } = await import('./sync.ts');

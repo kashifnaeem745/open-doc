@@ -6,7 +6,7 @@ import {
   flow,
   useDocPageCount,
   useDocPageNumber,
-} from '@open-doc/core';
+} from '@open-document/core';
 import type { CSSProperties, ReactNode } from 'react';
 
 export const design: DesignSystem = {

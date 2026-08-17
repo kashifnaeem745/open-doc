@@ -1,7 +1,7 @@
 # open-doc
 
 [![CI](https://github.com/simonliu-ai-product/open-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/simonliu-ai-product/open-doc/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@open-doc/core?style=flat)](https://www.npmjs.com/package/@open-doc/core)
+[![npm](https://img.shields.io/npm/v/@open-document/core?style=flat)](https://www.npmjs.com/package/@open-document/core)
 [![GitHub stars](https://img.shields.io/github/stars/simonliu-ai-product/open-doc?style=flat)](https://github.com/simonliu-ai-product/open-doc/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](https://opensource.org/licenses/MIT)
 
@@ -12,7 +12,7 @@
 If [open-slide](https://github.com/1weiho/open-slide) is Google Slides for agents, open-doc is Google Docs: same idea, different medium. A deck is a 1920 × 1080 canvas; a document is a stack of **A4 sheets** that has to survive a printer.
 
 ```bash
-npx @open-doc/cli init my-docs
+npx @open-document/cli init my-docs
 ```
 
 <img src=".github/assets/viewer.png" alt="The document viewer — page thumbnails on the left, a real A4 sheet in the middle, running footer and page numbers filled in by the framework." width="100%">
@@ -92,7 +92,7 @@ A left sidebar holds every view — Documents, Themes, Assets — plus folders y
 ## Get started
 
 ```bash
-npx @open-doc/cli init my-docs
+npx @open-document/cli init my-docs
 cd my-docs
 pnpm dev
 ```
@@ -103,7 +103,7 @@ Open http://localhost:5273. From there, drive it through your agent — or edit 
 
 ```tsx
 // docs/q3-review/index.tsx
-import type { DocMeta, DocPage } from '@open-doc/core';
+import type { DocMeta, DocPage } from '@open-document/core';
 
 const Cover: DocPage = () => <div>…</div>;
 const Summary: DocPage = () => <div>…</div>;
@@ -122,16 +122,16 @@ pnpm + Turbo monorepo.
 
 | Path | Description |
 | --- | --- |
-| [packages/core](packages/core) | `@open-doc/core` — runtime (document browser, page viewer, outline, export), Vite plugin, and the `open-doc` dev/build/preview CLI. |
-| [packages/cli](packages/cli) | `@open-doc/cli` — `npx @open-doc/cli init` scaffolder + project template. |
-| [packages/mcp](packages/mcp) | `@open-doc/mcp` — MCP server over Streamable HTTP. Opt-in; `open-doc dev --mcp` mounts it at `/mcp`. |
-| [apps/demo](apps/demo) | Example workspace consuming `@open-doc/core` via `workspace:*`. Dogfood target. |
+| [packages/core](packages/core) | `@open-document/core` — runtime (document browser, page viewer, outline, export), Vite plugin, and the `open-doc` dev/build/preview CLI. |
+| [packages/cli](packages/cli) | `@open-document/cli` — `npx @open-document/cli init` scaffolder + project template. |
+| [packages/mcp](packages/mcp) | `@open-document/mcp` — MCP server over Streamable HTTP. Opt-in; `open-doc dev --mcp` mounts it at `/mcp`. |
+| [apps/demo](apps/demo) | Example workspace consuming `@open-document/core` via `workspace:*`. Dogfood target. |
 
 ## Development
 
 ```bash
 pnpm install
-pnpm dev        # runs the demo against the local @open-doc/core
+pnpm dev        # runs the demo against the local @open-document/core
 pnpm build      # builds all packages
 pnpm typecheck  # tsc across the graph
 pnpm check      # biome (format + lint + organize imports)

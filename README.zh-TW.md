@@ -1,7 +1,7 @@
 # open-doc
 
 [![CI](https://github.com/simonliu-ai-product/open-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/simonliu-ai-product/open-doc/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@open-doc/core?style=flat)](https://www.npmjs.com/package/@open-doc/core)
+[![npm](https://img.shields.io/npm/v/@open-document/core?style=flat)](https://www.npmjs.com/package/@open-document/core)
 [![GitHub stars](https://img.shields.io/github/stars/simonliu-ai-product/open-doc?style=flat)](https://github.com/simonliu-ai-product/open-doc/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](https://opensource.org/licenses/MIT)
 
@@ -12,7 +12,7 @@
 如果說 [open-slide](https://github.com/1weiho/open-slide) 是給 agent 用的 Google Slides，那 open-doc 就是 Google Docs：概念相同，媒介不同。簡報是 1920 × 1080 的畫布；文件是一疊必須經得起印表機考驗的 **A4 紙**。
 
 ```bash
-npx @open-doc/cli init my-docs
+npx @open-document/cli init my-docs
 ```
 
 <img src=".github/assets/viewer.png" alt="文件檢視器——左側頁面縮圖，中間是一張真正的 A4 紙，頁尾與頁碼由框架自動填入。" width="100%">
@@ -92,7 +92,7 @@ export default [Cover, Contents, flow(<>…</>, { footer: Footer })] satisfies D
 ## 開始使用
 
 ```bash
-npx @open-doc/cli init my-docs
+npx @open-document/cli init my-docs
 cd my-docs
 pnpm dev
 ```
@@ -103,7 +103,7 @@ pnpm dev
 
 ```tsx
 // docs/q3-review/index.tsx
-import type { DocMeta, DocPage } from '@open-doc/core';
+import type { DocMeta, DocPage } from '@open-document/core';
 
 const Cover: DocPage = () => <div>…</div>;
 const Summary: DocPage = () => <div>…</div>;
@@ -122,16 +122,16 @@ pnpm + Turbo monorepo。
 
 | 路徑 | 說明 |
 | --- | --- |
-| [packages/core](packages/core) | `@open-doc/core` — runtime（文件瀏覽器、頁面檢視器、大綱、匯出）、Vite plugin，以及 `open-doc` dev/build/preview CLI。 |
-| [packages/cli](packages/cli) | `@open-doc/cli` — `npx @open-doc/cli init` scaffolder 與專案範本。 |
-| [packages/mcp](packages/mcp) | `@open-doc/mcp` — 走 Streamable HTTP 的 MCP server。選用；`open-doc dev --mcp` 會把它掛在 `/mcp`。 |
-| [apps/demo](apps/demo) | 透過 `workspace:*` 使用 `@open-doc/core` 的範例工作區。Dogfood 目標。 |
+| [packages/core](packages/core) | `@open-document/core` — runtime（文件瀏覽器、頁面檢視器、大綱、匯出）、Vite plugin，以及 `open-doc` dev/build/preview CLI。 |
+| [packages/cli](packages/cli) | `@open-document/cli` — `npx @open-document/cli init` scaffolder 與專案範本。 |
+| [packages/mcp](packages/mcp) | `@open-document/mcp` — 走 Streamable HTTP 的 MCP server。選用；`open-doc dev --mcp` 會把它掛在 `/mcp`。 |
+| [apps/demo](apps/demo) | 透過 `workspace:*` 使用 `@open-document/core` 的範例工作區。Dogfood 目標。 |
 
 ## 開發
 
 ```bash
 pnpm install
-pnpm dev        # 以本地的 @open-doc/core 執行 demo
+pnpm dev        # 以本地的 @open-document/core 執行 demo
 pnpm build      # 建置所有套件
 pnpm typecheck  # 跨整個相依圖執行 tsc
 pnpm check      # biome（格式化 + lint + 整理 import）

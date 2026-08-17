@@ -1,5 +1,5 @@
 {
-  "name": "@open-doc/core",
+  "name": "@open-document/core",
   "version": "0.1.0",
   "description": "Runtime and CLI for open-doc \u2014 write documents in docs/, we handle the pages, print layout, and export.",
   "type": "module",

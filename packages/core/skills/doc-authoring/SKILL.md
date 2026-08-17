@@ -33,14 +33,14 @@ Themes are produced by the `create-theme` skill and are pure documentation: copy
 - Put the document under `docs/<kebab-case-id>/`.
 - Entry is `docs/<id>/index.tsx`. Images/fonts go under `docs/<id>/assets/`.
 - Do **not** touch `package.json`, `open-doc.config.ts`, or other documents.
-- Do not add dependencies. Only `react`, `@open-doc/core`, and standard web APIs are available.
+- Do not add dependencies. Only `react`, `@open-document/core`, and standard web APIs are available.
 - A document is **one `index.tsx` plus `assets/`** — nothing else. Helper components and constants live inside `index.tsx`; no sibling `.tsx` files, no `README.md`.
 
 ## File contract
 
 ```tsx
 // docs/<id>/index.tsx
-import type { DocMeta, DocPage } from '@open-doc/core';
+import type { DocMeta, DocPage } from '@open-document/core';
 
 const Cover: DocPage = () => <div>…</div>;
 const Body: DocPage = () => <div>…</div>;
@@ -64,7 +64,7 @@ export default [Cover, Body] satisfies DocPage[];
 ## Two ways to fill pages
 
 ```tsx
-import { flow, type DocEntry } from '@open-doc/core';
+import { flow, type DocEntry } from '@open-document/core';
 
 const Body = flow(
   <>
@@ -138,7 +138,7 @@ The framework builds the document outline by scanning rendered pages for `h1`, `
 ## Table of contents
 
 ```tsx
-import { TableOfContents } from '@open-doc/core';
+import { TableOfContents } from '@open-document/core';
 
 const Contents: DocPage = () => (
   <div style={page}>
@@ -153,7 +153,7 @@ Page numbers come from the scan, so they are always correct — **never hand-wri
 ## Page numbers, headers, footers
 
 ```tsx
-import { useDocPageCount, useDocPageNumber } from '@open-doc/core';
+import { useDocPageCount, useDocPageNumber } from '@open-document/core';
 
 const Footer = () => {
   const page = useDocPageNumber();
@@ -174,7 +174,7 @@ const Footer = () => {
 ## Starter template
 
 ```tsx
-import { type DesignSystem, type DocMeta, type DocPage, useDocPageCount, useDocPageNumber } from '@open-doc/core';
+import { type DesignSystem, type DocMeta, type DocPage, useDocPageCount, useDocPageNumber } from '@open-document/core';
 
 export const design: DesignSystem = {
   palette: {

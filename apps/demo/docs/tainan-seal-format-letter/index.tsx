@@ -1,4 +1,4 @@
-import type { DesignSystem, DocMeta, DocPage } from '@open-doc/core';
+import type { DesignSystem, DocMeta, DocPage } from '@open-document/core';
 import type { CSSProperties, ReactNode } from 'react';
 
 export const design: DesignSystem = {

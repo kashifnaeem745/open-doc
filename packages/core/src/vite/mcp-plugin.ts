@@ -8,7 +8,7 @@ export type McpPluginOptions = ApiPluginOptions & {
 };
 
 /**
- * Mounts `@open-doc/mcp` on the dev server so an agent and the browser act on
+ * Mounts `@open-document/mcp` on the dev server so an agent and the browser act on
  * one workspace — a tool call lands on disk and the page hot-reloads.
  *
  * The package is imported dynamically and is *not* a dependency of core: the
@@ -25,7 +25,7 @@ export function mcpPlugin(opts: McpPluginOptions): Plugin {
       try {
         // Resolved through a variable so core does not take a build-time
         // dependency on a package that depends on core.
-        const specifier = '@open-doc/mcp';
+        const specifier = '@open-document/mcp';
         const mod = (await import(specifier)) as {
           createOpenDocMcpMiddleware: (o: unknown) => never;
         };
@@ -37,7 +37,9 @@ export function mcpPlugin(opts: McpPluginOptions): Plugin {
         });
       } catch {
         server.config.logger.warn(
-          chalk.yellow('  MCP endpoint disabled — run `pnpm add -D @open-doc/mcp` to enable it.\n'),
+          chalk.yellow(
+            '  MCP endpoint disabled — run `pnpm add -D @open-document/mcp` to enable it.\n',
+          ),
         );
         return;
       }

@@ -230,7 +230,7 @@ function findImports(ast: AstNode): ImportInfo[] {
 
 function ensureDesignSystemImport(source: string, ast: AstNode): string {
   const imports = findImports(ast);
-  const coreImport = imports.find((imp) => imp.source === '@open-doc/core');
+  const coreImport = imports.find((imp) => imp.source === '@open-document/core');
   if (coreImport) {
     const hasDesignSystem = coreImport.specifiers.some((spec) => {
       if (spec.type !== 'ImportSpecifier') return false;
@@ -249,7 +249,7 @@ function ensureDesignSystemImport(source: string, ast: AstNode): string {
     return source.slice(0, absoluteBrace) + insertText + source.slice(absoluteBrace);
   }
 
-  const stmt = `import type { DesignSystem } from '@open-doc/core';\n`;
+  const stmt = `import type { DesignSystem } from '@open-document/core';\n`;
   if (imports.length > 0) {
     const insertAt = imports[imports.length - 1].node.end;
     const trail = source[insertAt] === '\n' ? '' : '\n';

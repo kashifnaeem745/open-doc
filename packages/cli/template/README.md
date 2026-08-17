@@ -12,7 +12,7 @@ Open http://localhost:5273. Every folder under `docs/` with an `index.tsx` shows
 ## Letting an agent drive it
 
 ```bash
-pnpm add -D @open-doc/mcp
+pnpm add -D @open-document/mcp
 open-doc dev --mcp
 ```
 

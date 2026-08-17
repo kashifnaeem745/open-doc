@@ -1,11 +1,11 @@
-# @open-doc/cli
+# @open-document/cli
 
 [English](README.md) · **繁體中文**
 
 建立 [open-doc](https://github.com/simonliu-ai-product/open-doc) 工作區——文件即 React，一個元件對應一張印出來的頁面。
 
 ```bash
-npx @open-doc/cli init my-docs
+npx @open-document/cli init my-docs
 cd my-docs
 pnpm dev
 ```

@@ -36,7 +36,7 @@ const CORE_VERSION = readCoreVersion();
 
 export type CreateViteConfigOptions = {
   userCwd: string;
-  /** Mount the MCP endpoint (requires `@open-doc/mcp`). */
+  /** Mount the MCP endpoint (requires `@open-document/mcp`). */
   mcp?: boolean;
   config?: OpenDocConfig;
   mode?: 'serve' | 'build';
@@ -84,7 +84,7 @@ export async function createViteConfig(opts: CreateViteConfigOptions): Promise<I
         'clsx',
         'tailwind-merge',
       ],
-      // The app source ships inside node_modules/@open-doc/core/src/app, so
+      // The app source ships inside node_modules/@open-document/core/src/app, so
       // Vite's dep scanner traverses it as a third-party dep and tries to
       // bundle the virtual imports with esbuild. Mark them external.
       esbuildOptions: {

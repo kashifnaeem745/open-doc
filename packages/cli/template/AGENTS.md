@@ -5,7 +5,7 @@ You author **documents** here — reports, proposals, whitepapers, memos. Each d
 ## Rules
 
 - Write only inside `docs/<id>/`. Don't touch `package.json`, `open-doc.config.ts`, or other documents.
-- No new dependencies. Only `react`, `@open-doc/core`, and standard web APIs are available.
+- No new dependencies. Only `react`, `@open-document/core`, and standard web APIs are available.
 - A document is one `index.tsx` plus an optional `assets/` folder. No sibling components files.
 
 ## Skills

@@ -12,7 +12,7 @@ A document's default export is a list of **entries**. There are two kinds, and t
 ## Flow sections
 
 ```tsx
-import { flow, type DocEntry } from '@open-doc/core';
+import { flow, type DocEntry } from '@open-document/core';
 
 const Body = flow(
   <>

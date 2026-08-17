@@ -3,7 +3,7 @@ import { type Context, createContext, type ReactNode, useContext, useMemo } from
 type PageContextValue = { index: number; total: number };
 
 // Stored on globalThis so the dev (src) and published (dist) copies of this
-// module share one context instance — a document imports `@open-doc/core`
+// module share one context instance — a document imports `@open-document/core`
 // (dist) while the viewer imports the source, so without this the provider
 // writes to one context and the hook reads from another.
 const GLOBAL_KEY = '__open_doc_page_context__';

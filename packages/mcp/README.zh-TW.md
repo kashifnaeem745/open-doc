@@ -1,11 +1,11 @@
-# @open-doc/mcp
+# @open-document/mcp
 
 [English](README.md) · **繁體中文**
 
 open-doc 工作區的 MCP server。任何支援 Model Context Protocol 的 agent framework 都能列出、讀取、寫入與歸檔文件——而且因為它跑在 dev server 上，agent 動作的同時，瀏覽器裡的頁面會即時熱更新。
 
 ```bash
-pnpm add -D @open-doc/mcp
+pnpm add -D @open-document/mcp
 open-doc dev --mcp
 ```
 
@@ -61,7 +61,7 @@ open-doc dev --mcp
 一般情況用 `open-doc dev --mcp` 就夠了。要自行掛載：
 
 ```ts
-import { createOpenDocMcpMiddleware } from '@open-doc/mcp';
+import { createOpenDocMcpMiddleware } from '@open-document/mcp';
 
 app.use('/mcp', createOpenDocMcpMiddleware({ userCwd: process.cwd() }));
 ```

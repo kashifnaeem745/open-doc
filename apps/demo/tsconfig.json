@@ -11,7 +11,7 @@
     "noEmit": true,
     "strict": true,
     "skipLibCheck": true,
-    "types": ["@open-doc/core/env"]
+    "types": ["@open-document/core/env"]
   },
   "include": ["docs/**/*", "open-doc.config.ts"]
 }

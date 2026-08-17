@@ -8,5 +8,5 @@ export default defineConfig({
   clean: true,
   dts: true,
   shims: false,
-  external: ['@open-doc/core'],
+  external: ['@open-document/core'],
 });

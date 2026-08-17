@@ -1,11 +1,11 @@
-# @open-doc/mcp
+# @open-document/mcp
 
 **English** · [繁體中文](README.zh-TW.md)
 
 An MCP server for an open-doc workspace. Any agent framework that speaks Model Context Protocol can list, read, write, and file documents — and because it runs on the dev server, the page in the browser hot-reloads as the agent works.
 
 ```bash
-pnpm add -D @open-doc/mcp
+pnpm add -D @open-document/mcp
 open-doc dev --mcp
 ```
 
@@ -61,7 +61,7 @@ The tools write to the user's disk, so the endpoint defends itself:
 `open-doc dev --mcp` covers the usual case. To mount it yourself:
 
 ```ts
-import { createOpenDocMcpMiddleware } from '@open-doc/mcp';
+import { createOpenDocMcpMiddleware } from '@open-document/mcp';
 
 app.use('/mcp', createOpenDocMcpMiddleware({ userCwd: process.cwd() }));
 ```

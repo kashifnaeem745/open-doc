@@ -5,7 +5,7 @@ import {
   TableOfContents,
   useDocPageCount,
   useDocPageNumber,
-} from '@open-doc/core';
+} from '@open-document/core';
 import type { CSSProperties, ReactNode } from 'react';
 
 export const design: DesignSystem = {
@@ -195,7 +195,7 @@ const Authoring: DocPage = () => (
       and <code>useDocPageCount()</code>; never hardcode them.
     </p>
 
-    <Code>{`import { useDocPageNumber, useDocPageCount } from '@open-doc/core';
+    <Code>{`import { useDocPageNumber, useDocPageCount } from '@open-document/core';
 
 const Footer = () => {
   const n = useDocPageNumber();

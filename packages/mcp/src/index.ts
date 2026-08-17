@@ -7,7 +7,7 @@ import {
   McpServer,
   originValidationResponse,
 } from '@modelcontextprotocol/server';
-import { type ApiContext, makeContext } from '@open-doc/core/ops';
+import { type ApiContext, makeContext } from '@open-document/core/ops';
 import { registerTools } from './tools.ts';
 
 export type OpenDocMcpOptions = {

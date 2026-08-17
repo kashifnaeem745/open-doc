@@ -1,11 +1,11 @@
-# @open-doc/cli
+# @open-document/cli
 
 **English** · [繁體中文](README.zh-TW.md)
 
 Scaffold an [open-doc](https://github.com/simonliu-ai-product/open-doc) workspace — documents as React, one component per printed page.
 
 ```bash
-npx @open-doc/cli init my-docs
+npx @open-document/cli init my-docs
 cd my-docs
 pnpm dev
 ```

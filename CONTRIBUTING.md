@@ -1,6 +1,6 @@
 # Contributing to open-doc
 
-Thanks for your interest in improving open-doc! This guide covers the workflow for contributing to the framework itself — the `@open-doc/core` runtime, the `@open-doc/cli` scaffolder, the `@open-doc/mcp` server, and the demo app.
+Thanks for your interest in improving open-doc! This guide covers the workflow for contributing to the framework itself — the `@open-document/core` runtime, the `@open-document/cli` scaffolder, the `@open-document/mcp` server, and the demo app.
 
 If you're authoring documents inside a scaffolded project, you don't need this file — drive your report through your coding agent or edit `docs/<id>/index.tsx` directly.
 
@@ -19,10 +19,10 @@ pnpm + Turbo monorepo.
 
 | Path | Package | Role |
 | --- | --- | --- |
-| [`packages/core`](packages/core) | `@open-doc/core` | Runtime (document browser, page viewer, outline, themes, assets panel, design panel, PDF/HTML export), Vite plugins, dev API, `open-doc` dev/build CLI, canonical skills. |
-| [`packages/cli`](packages/cli) | `@open-doc/cli` | `npx @open-doc/cli init` scaffolder + project template. |
-| [`packages/mcp`](packages/mcp) | `@open-doc/mcp` | MCP server exposing the `ops` layer over Streamable HTTP. Opt-in; mounted at `/mcp` by `open-doc dev --mcp`. |
-| [`apps/demo`](apps/demo) | private | Local consumer of `@open-doc/core` via `workspace:*`. The dogfood target for the framework. |
+| [`packages/core`](packages/core) | `@open-document/core` | Runtime (document browser, page viewer, outline, themes, assets panel, design panel, PDF/HTML export), Vite plugins, dev API, `open-doc` dev/build CLI, canonical skills. |
+| [`packages/cli`](packages/cli) | `@open-document/cli` | `npx @open-document/cli init` scaffolder + project template. |
+| [`packages/mcp`](packages/mcp) | `@open-document/mcp` | MCP server exposing the `ops` layer over Streamable HTTP. Opt-in; mounted at `/mcp` by `open-doc dev --mcp`. |
+| [`apps/demo`](apps/demo) | private | Local consumer of `@open-document/core` via `workspace:*`. The dogfood target for the framework. |
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ cd open-doc
 pnpm install
 ```
 
-Then run the demo against the local `@open-doc/core`:
+Then run the demo against the local `@open-document/core`:
 
 ```bash
 pnpm dev
@@ -114,7 +114,7 @@ pnpm mcp <script>
 
 ## Releases
 
-Releases are cut through [changesets](https://github.com/changesets/changesets). Landing a changeset on `main` opens (or updates) a "chore: release packages" PR; merging that PR builds `@open-doc/core`, `@open-doc/cli`, and `@open-doc/mcp` and publishes them to npm from CI. Contributors don't need to publish anything — just land the changeset alongside your code.
+Releases are cut through [changesets](https://github.com/changesets/changesets). Landing a changeset on `main` opens (or updates) a "chore: release packages" PR; merging that PR builds `@open-document/core`, `@open-document/cli`, and `@open-document/mcp` and publishes them to npm from CI. Contributors don't need to publish anything — just land the changeset alongside your code.
 
 ## Questions
 

@@ -6,9 +6,9 @@ open-doc is pre-1.0. Only the latest published version of each package receives 
 
 | Package | Supported |
 | --- | --- |
-| `@open-doc/core` | latest release |
-| `@open-doc/cli` | latest release |
-| `@open-doc/mcp` | latest release |
+| `@open-document/core` | latest release |
+| `@open-document/cli` | latest release |
+| `@open-document/mcp` | latest release |
 | older versions | :x: |
 
 ## Reporting a vulnerability

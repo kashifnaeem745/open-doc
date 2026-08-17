@@ -1,5 +1,5 @@
 {
-  "name": "@open-doc/cli",
+  "name": "@open-document/cli",
   "version": "0.1.0",
   "description": "Scaffold an open-doc workspace with agent skills preconfigured.",
   "type": "module",
