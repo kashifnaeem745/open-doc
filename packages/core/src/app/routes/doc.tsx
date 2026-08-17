@@ -401,7 +401,11 @@ export function Doc() {
           onSelectPage={scrollToPage}
           onSelectEntry={scrollToEntry}
         />
-        <div ref={scrollRef} className="relative min-w-0 flex-1 overflow-auto bg-canvas">
+        <div
+          ref={scrollRef}
+          data-od-viewer
+          className="relative min-w-0 flex-1 overflow-auto bg-canvas"
+        >
           <div
             ref={pagesRef}
             className="flex flex-col items-center"

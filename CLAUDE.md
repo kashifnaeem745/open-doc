@@ -26,6 +26,7 @@ pnpm typecheck    # tsc across the graph
 pnpm check        # biome (format + lint + organize imports)
 pnpm check:fix    # auto-fix what biome can
 pnpm test         # vitest
+pnpm test:e2e     # playwright (builds core first, boots the e2e fixture project)
 ```
 
 Filter to one package: `pnpm core <script>` / `pnpm cli <script>` / `pnpm mcp <script>`.
@@ -48,6 +49,7 @@ Releases go through changesets: `pnpm changeset` on any PR touching `packages/*`
 - **The design panel edits source, not state.** `design-plugin.ts` parses `docs/<id>/index.tsx` with Babel, replaces only the `design` object's byte range, and rewrites the file. It accepts literal objects only; anything else is reported back to the panel rather than overwritten. Round-trip tests live in `design-plugin.test.ts` — extend them when you touch the serializer.
 - **The browser is a two-pane shell.** `routes/home-shell.tsx` owns the left sidebar (nav counts, folders, theme toggle) and hands folder state to the routes through the outlet context — a route never fetches the manifest itself. The document view mirrors it: `components/doc-sidebar.tsx` is the left rail (page thumbnails / outline), the pages scroll in the middle, and the design panel docks right.
 - **Folders live in `docs/.folders.json`.** The manifest is the only mutable state the framework owns; dev reads it live through `/__folders`, a static build reads the snapshot baked into `virtual:open-doc/folders`. Document ids never move — filing a document only edits assignments.
+- **e2e runs against a fixture project, not the demo.** `packages/core/e2e/fixture` is a real workspace package (`docs/`, `themes/`, an `open-doc.config.ts`); `e2e/scratch.mjs` copies it into `e2e/.scratch/<name>` per run so tests that write to disk never dirty the committed sources. `pnpm test:e2e` builds core first, which is where CI's build coverage comes from. Thumbnails are page frames too — anything counting sheets must scope to `[data-od-viewer]`.
 - **Themes are documentation.** `themes-plugin.ts` reads `themes/*.md` frontmatter + body into `virtual:open-doc/themes` and pairs each with an optional `<id>.demo.tsx`. Nothing about a theme is enforced at runtime; `meta.theme` only draws the back-link.
 
 ## Hard rules

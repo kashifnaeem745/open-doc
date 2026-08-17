@@ -16,6 +16,7 @@
     "check:fix": "biome check --write .",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e": "pnpm --filter @open-document/core test:e2e",
     "core": "pnpm --filter @open-document/core",
     "cli": "pnpm --filter @open-document/cli",
     "mcp": "pnpm --filter @open-document/mcp",

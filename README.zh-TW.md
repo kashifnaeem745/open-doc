@@ -136,6 +136,7 @@ pnpm build      # 建置所有套件
 pnpm typecheck  # 跨整個相依圖執行 tsc
 pnpm check      # biome（格式化 + lint + 整理 import）
 pnpm test       # vitest
+pnpm test:e2e   # playwright
 ```
 
 ## 參與貢獻

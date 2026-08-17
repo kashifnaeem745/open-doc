@@ -56,6 +56,7 @@ pnpm typecheck    # tsc across the graph
 pnpm check        # biome (format + lint + organize imports)
 pnpm check:fix    # auto-fix what biome can
 pnpm test         # vitest
+pnpm test:e2e     # playwright — builds core, then drives the e2e fixture project
 ```
 
 Filter to one package:
@@ -110,6 +111,7 @@ pnpm mcp <script>
 ## Testing
 
 - Unit tests run via `pnpm test` (Vitest). Add tests next to the code (`*.test.ts`) when fixing a bug or adding logic that warrants it. Pure logic — the flow packer, the design serializer, path safety — is expected to be covered.
+- End-to-end tests run via `pnpm test:e2e` (Playwright). They build core, boot `open-doc dev` against `packages/core/e2e/fixture`, and cover the browser, the viewer, flow pagination, the inspector, the design panel, the dev API, HTML export, the static build, and the CLI. Anything touching those paths needs its case here. Run `npx playwright install chromium` once before the first run.
 - For runtime/UI changes, verify the change in `apps/demo` **and in an export** (PDF and HTML), then describe what you exercised in the PR. The viewer and the exporters render the same pages through different paths; a fix that only lands in one of them is incomplete.
 
 ## Releases

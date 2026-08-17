@@ -136,6 +136,7 @@ pnpm build      # builds all packages
 pnpm typecheck  # tsc across the graph
 pnpm check      # biome (format + lint + organize imports)
 pnpm test       # vitest
+pnpm test:e2e   # playwright
 ```
 
 ## Contributing
