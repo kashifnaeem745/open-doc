@@ -6,7 +6,9 @@ import react from '@vitejs/plugin-react';
 import type { InlineConfig } from 'vite';
 import { apiPlugin } from './api-plugin.ts';
 import { currentPlugin } from './current-plugin.ts';
+import { dataPlugin } from './data-plugin.ts';
 import { designPlugin } from './design-plugin.ts';
+import { diagramPlugin } from './diagram-plugin.ts';
 import { locTagsPlugin } from './loc-tags-plugin.ts';
 import { mcpPlugin } from './mcp-plugin.ts';
 import { loadUserConfig, type OpenDocConfig, openDocPlugin } from './open-doc-plugin.ts';
@@ -41,6 +43,12 @@ export type CreateViteConfigOptions = {
   mcp?: boolean;
   config?: OpenDocConfig;
   mode?: 'serve' | 'build';
+  /**
+   * Drive the app from a headless browser rather than a person. Leaves out the
+   * plugins that exist to serve a reader — chiefly the one publishing the
+   * reading position, which an export would otherwise overwrite.
+   */
+  headless?: boolean;
 };
 
 export async function createViteConfig(opts: CreateViteConfigOptions): Promise<InlineConfig> {
@@ -58,6 +66,8 @@ export async function createViteConfig(opts: CreateViteConfigOptions): Promise<I
     configFile: false,
     envDir: userCwd,
     plugins: [
+      dataPlugin(),
+      diagramPlugin(),
       locTagsPlugin({ userCwd, docsDir }),
       react(),
       tailwindcss(),
@@ -65,7 +75,7 @@ export async function createViteConfig(opts: CreateViteConfigOptions): Promise<I
       themesPlugin({ userCwd, config }),
       designPlugin({ userCwd, docsDir }),
       apiPlugin({ userCwd, docsDir, assetsDir, coreVersion: CORE_VERSION }),
-      currentPlugin({ userCwd, docsDir }),
+      ...(opts.headless ? [] : [currentPlugin({ userCwd, docsDir })]),
       ...(opts.mcp ? [mcpPlugin({ userCwd, docsDir, assetsDir, coreVersion: CORE_VERSION })] : []),
     ],
     resolve: {
